@@ -2,4 +2,11 @@
     <string name="app_name">CoffeeShop</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Buttons -->
+    <string name="btn_enter">Enter</string>
+    <string name="enter_phone">please enter phone number</string>
+    <string name="enter_name">please enter name</string>
+
+
 </resources>

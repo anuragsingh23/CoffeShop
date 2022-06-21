@@ -1,4 +1,6 @@
 package com.example.coffeeshop.ui.firstscreen
 
-class FirstScreenViewModel {
+import androidx.lifecycle.ViewModel
+
+class FirstScreenViewModel : ViewModel() {
 }
