@@ -4,9 +4,11 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <!-- Buttons -->
-    <string name="btn_enter">Enter</string>
+    <string name="btn_enter">Next</string>
     <string name="enter_phone">please enter phone number</string>
     <string name="enter_name">please enter name</string>
+    <string name="lbl_type">Name</string>
+
 
 
 </resources>

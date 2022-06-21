@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.coffeeshop.R
 import com.example.coffeeshop.databinding.FragmentFirstBinding
 
@@ -24,10 +25,17 @@ class FirstFragment : Fragment(R.layout.fragment_first) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.btnEnter.setOnClickListener {
+            navigateToOrderScreen()
+        }
     }
 
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
+    }
+    fun navigateToOrderScreen(){
+        findNavController().navigate(FirstFragmentDirections.actionFirstFragmentToOrderFragment())
     }
 }
