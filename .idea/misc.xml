@@ -5,8 +5,11 @@
       <map>
         <entry key="..\:/Users/anura/AndroidStudioProjects/CoffeeShop/app/src/main/res/layout-v23/fragment_first.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/anura/AndroidStudioProjects/CoffeeShop/app/src/main/res/layout/activity_main.xml" value="0.24818840579710144" />
-        <entry key="..\:/Users/anura/AndroidStudioProjects/CoffeeShop/app/src/main/res/layout/fragment_first.xml" value="0.128" />
+        <entry key="..\:/Users/anura/AndroidStudioProjects/CoffeeShop/app/src/main/res/layout/fragment_first.xml" value="0.264" />
+        <entry key="..\:/Users/anura/AndroidStudioProjects/CoffeeShop/app/src/main/res/layout/fragment_history.xml" value="0.2" />
         <entry key="..\:/Users/anura/AndroidStudioProjects/CoffeeShop/app/src/main/res/layout/fragment_order.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/anura/AndroidStudioProjects/CoffeeShop/app/src/main/res/menu/menu.xml" value="0.1" />
+        <entry key="..\:/Users/anura/AndroidStudioProjects/CoffeeShop/app/src/main/res/menu/order_menu.xml" value="0.25" />
       </map>
     </option>
   </component>

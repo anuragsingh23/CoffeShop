@@ -8,7 +8,7 @@
     <string name="enter_phone">please enter phone number</string>
     <string name="enter_name">please enter name</string>
     <string name="lbl_type">Name</string>
-
+    <string name="order_history">Order History</string>
 
 
 </resources>

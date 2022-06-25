@@ -7,8 +7,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.coffeeshop.R
-import com.example.coffeeshop.databinding.FragmentFirstBinding
 
+import com.example.coffeeshop.databinding.FragmentFirstBinding
+import dagger.hilt.android.AndroidEntryPoint
+
+//@AndroidEntryPoint
 class FirstFragment : Fragment(R.layout.fragment_first) {
 
     private var _binding: FragmentFirstBinding? = null
