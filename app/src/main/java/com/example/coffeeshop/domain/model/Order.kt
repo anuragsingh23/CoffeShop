@@ -10,7 +10,7 @@ data class Order(
     @PrimaryKey(autoGenerate = true) val id: Int ,
     val items : String ,
     val size : String ,
-    val note: String? = null,
+    val note: String ,
     val amount: Int,
     val date : String
 )

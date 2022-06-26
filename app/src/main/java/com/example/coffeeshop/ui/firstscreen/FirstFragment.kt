@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.coffeeshop.R
 
@@ -13,6 +14,8 @@ import dagger.hilt.android.AndroidEntryPoint
 
 //@AndroidEntryPoint
 class FirstFragment : Fragment(R.layout.fragment_first) {
+
+    private val viewModel: FirstScreenViewModel by viewModels()
 
     private var _binding: FragmentFirstBinding? = null
     private val binding : FragmentFirstBinding get()= _binding!!
@@ -32,13 +35,15 @@ class FirstFragment : Fragment(R.layout.fragment_first) {
         binding.btnEnter.setOnClickListener {
             navigateToOrderScreen()
         }
+
+
     }
 
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
     }
-    fun navigateToOrderScreen(){
+    private fun navigateToOrderScreen(){
         findNavController().navigate(FirstFragmentDirections.actionFirstFragmentToOrderFragment())
     }
 }
