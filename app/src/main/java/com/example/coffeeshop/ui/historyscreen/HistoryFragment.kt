@@ -21,7 +21,9 @@ class HistoryFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentHistoryBinding.inflate(layoutInflater,container,false)
+
         (activity as AppCompatActivity).supportActionBar?.title = "History"
+
         return binding.root
     }
 

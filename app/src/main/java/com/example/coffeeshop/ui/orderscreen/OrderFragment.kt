@@ -34,6 +34,7 @@ class OrderFragment : Fragment() {
 
         (activity as AppCompatActivity).supportActionBar?.title = "Order Coffee"
 
+
         menuHost.addMenuProvider(object : MenuProvider {
             override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
                 menuInflater.inflate(com.example.coffeeshop.R.menu.order_menu,menu)
