@@ -3,6 +3,7 @@ package com.example.coffeeshop.ui.orderscreen
 import android.R
 import android.os.Bundle
 import android.view.*
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.MenuHost
 import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
@@ -24,13 +25,14 @@ class OrderFragment : Fragment() {
         _binding = FragmentOrderBinding.inflate(layoutInflater,container,false)
 
 
-
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val menuHost: MenuHost = requireActivity()
+
+        (activity as AppCompatActivity).supportActionBar?.title = "Order Coffee"
 
         menuHost.addMenuProvider(object : MenuProvider {
             override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
