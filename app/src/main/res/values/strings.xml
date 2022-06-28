@@ -9,6 +9,12 @@
     <string name="enter_name">please enter name</string>
     <string name="lbl_type">Name</string>
     <string name="order_history">Order History</string>
+    <string name="coffee">Coffee</string>
+    <string name="place_order">Place Order</string>
+    <string name="small">Small</string>
+    <string name="medium">Medium</string>
+    <string name="large">Large</string>
+    <string name="espresso_10">ESPRESSO : $10</string>
 
 
 </resources>
