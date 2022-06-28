@@ -7,5 +7,4 @@ import java.util.*
 
 class FirstScreenViewModel : ViewModel() {
 
-
 }

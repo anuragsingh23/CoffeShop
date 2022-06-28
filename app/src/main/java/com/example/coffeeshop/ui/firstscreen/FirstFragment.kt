@@ -10,8 +10,9 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.coffeeshop.R
 import com.example.coffeeshop.databinding.FragmentFirstBinding
+import dagger.hilt.android.AndroidEntryPoint
 
-//@AndroidEntryPoint
+@AndroidEntryPoint
 class FirstFragment : Fragment(R.layout.fragment_first) {
 
     private val viewModel: FirstScreenViewModel by viewModels()

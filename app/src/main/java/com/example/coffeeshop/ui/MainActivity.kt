@@ -3,9 +3,10 @@ package com.example.coffeeshop.ui
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.coffeeshop.R
+import dagger.hilt.android.AndroidEntryPoint
 
 
-//@AndroidEntryPoint
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
