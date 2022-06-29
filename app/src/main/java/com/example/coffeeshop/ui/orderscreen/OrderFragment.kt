@@ -93,6 +93,7 @@ class OrderFragment : Fragment() {
         binding.btnIncrease4.setOnClickListener { viewModel.incrementFrappe() }
         binding.btnDecrease4.setOnClickListener { viewModel.decreaseFrappe() }
 
+        binding.bill.text = viewModel.orderDetails().toString()
 
         binding.btnPlaceOrder.setOnClickListener {
             // delay on button

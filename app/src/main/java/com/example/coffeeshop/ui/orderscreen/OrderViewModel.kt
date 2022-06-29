@@ -76,6 +76,11 @@ class OrderViewModel : ViewModel() {
         }
     }
 
+    fun orderDetails(){
+        if (_espresso.value!! > 0 ){
+
+        }
+    }
     fun reset(){
         _espresso.value = 0
         _cappa.value = 0
