@@ -26,8 +26,6 @@ class FirstFragment : Fragment(R.layout.fragment_first) {
 
     private val viewModel: FirstScreenViewModel by viewModels()
 
-
-
     private var _binding: FragmentFirstBinding? = null
     private val binding : FragmentFirstBinding get()= _binding!!
 
