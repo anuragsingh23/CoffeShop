@@ -12,7 +12,7 @@
         android:layout_height="0dp"
         android:fillViewport="true"
         android:scrollbars="none"
-        app:layout_constraintBottom_toTopOf="@+id/btn_place_order"
+        app:layout_constraintBottom_toTopOf="@+id/bill"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -25,46 +25,350 @@
             app:layout_constraintVertical_chainStyle="spread_inside">
 
             <TextView
+                android:id="@+id/tv_list"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/coffee"
-                android:textColor="@color/purple_500"
+                android:textColor="#ED6135"
                 android:textSize="@dimen/_18sdp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
-
-            <TextView
+            <LinearLayout
+                android:layout_marginTop="@dimen/_18sdp"
+                android:id="@+id/lin_lay_1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_8sdp"
-                android:layout_marginEnd="@dimen/_8sdp"
-                android:textSize="@dimen/_15sdp"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_list"
+                android:orientation="horizontal"
+                android:weightSum="12">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/espresso_10"
+                    android:layout_weight="5"
+                    android:textSize="@dimen/_18sdp">
+                </TextView>
+                <Button
+                    android:id="@+id/btn_decrease_1"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:padding="@dimen/_2sdp"
+                    android:layout_weight="2"
+                    android:text="@string/minus" />
 
+                <TextView
+                    android:id="@+id/tv_score_espresso"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/initial_value"
+                    android:layout_weight="2"
+                   android:layout_marginStart="@dimen/_7sdp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/_18sdp" />
+
+                <Button
+                    android:id="@+id/btn_increase_1"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:padding="@dimen/_2sdp"
+                    android:layout_weight="2"
+                    android:text="@string/increase" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lin_lay_1.1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lin_lay_1"
+                android:orientation="horizontal"
+                android:weightSum="3">
+                <RadioButton
+                        android:id="@+id/small_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/small" />
+
+
+                    <RadioButton
+                        android:id="@+id/medium_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/medium" />
+
+                    <RadioButton
+                        android:id="@+id/large_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/large" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/lin_lay_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/_20sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lin_lay_1.1"
+                android:orientation="horizontal"
+                android:weightSum="12">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cappucciano_20"
+                    android:layout_weight="5"
+                    android:textSize="@dimen/_18sdp">
+                </TextView>
+                <Button
+                    android:id="@+id/btn_decrease_2"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:padding="@dimen/_2sdp"
+                    android:layout_weight="2"
+                    android:text="@string/minus" />
+
+                <TextView
+                    android:id="@+id/tv_score_cappa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/initial_value"
+                    android:layout_weight="2"
+                    android:layout_marginStart="@dimen/_7sdp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/_18sdp" />
+
+                <Button
+                    android:id="@+id/btn_increase_2"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:padding="@dimen/_2sdp"
+                    android:layout_weight="2"
+                    android:text="@string/increase" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lin_lay_2.1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lin_lay_2"
+                android:orientation="horizontal"
+                android:weightSum="3">
+                <RadioButton
+                    android:id="@+id/small_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/small" />
+
+
+                <RadioButton
+                    android:id="@+id/medium_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/medium" />
+
+                <RadioButton
+                    android:id="@+id/large_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/large" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/lin_lay_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/_20sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lin_lay_2.1"
+                android:orientation="horizontal"
+                android:weightSum="12">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/latte_15"
+                    android:layout_weight="5"
+                    android:textSize="@dimen/_18sdp">
+                </TextView>
+                <Button
+                    android:id="@+id/btn_decrease_3"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:padding="@dimen/_2sdp"
+                    android:layout_weight="2"
+                    android:text="@string/minus" />
+
+                <TextView
+                    android:id="@+id/tv_score_latte"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/initial_value"
+                    android:layout_weight="2"
+                    android:layout_marginStart="@dimen/_7sdp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/_18sdp" />
+
+                <Button
+                    android:id="@+id/btn_increase_3"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:padding="@dimen/_2sdp"
+                    android:layout_weight="2"
+                    android:text="@string/increase" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lin_lay_3.1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lin_lay_3"
+                android:orientation="horizontal"
+                android:weightSum="3">
+                <RadioButton
+                    android:id="@+id/small_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/small" />
+
+
+                <RadioButton
+                    android:id="@+id/medium_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/medium" />
+
+                <RadioButton
+                    android:id="@+id/large_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/large" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/lin_lay_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lin_lay_3.1"
+                android:orientation="horizontal"
+                android:weightSum="12">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/frappe_40"
+                    android:layout_weight="5"
+                    android:textSize="@dimen/_18sdp">
+                </TextView>
+                <Button
+                    android:id="@+id/btn_decrease_4"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:padding="@dimen/_2sdp"
+                    android:layout_weight="2"
+                    android:text="@string/minus" />
+
+                <TextView
+                    android:id="@+id/tv_score_frappe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/initial_value"
+                    android:layout_weight="2"
+                    android:layout_marginStart="@dimen/_7sdp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/_18sdp" />
+
+                <Button
+                    android:id="@+id/btn_increase_4"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:padding="@dimen/_2sdp"
+                    android:layout_weight="2"
+                    android:text="@string/increase" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lin_lay_4.1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lin_lay_4"
+                android:orientation="horizontal"
+                android:weightSum="3">
+                <RadioButton
+                    android:id="@+id/small_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/small" />
+
+
+                <RadioButton
+                    android:id="@+id/medium_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/medium" />
+
+                <RadioButton
+                    android:id="@+id/large_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/large" />
+
+            </LinearLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     </ScrollView>
 
-    <Button
-        android:id="@+id/btn_place_order"
-        android:textColor="@color/white"
-        android:text="@string/place_order"
-        android:textSize="@dimen/_16sdp"
+    <TextView
+        android:id="@+id/bill"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_100sdp"
+        android:textSize="@dimen/_15sdp"
         android:layout_marginStart="@dimen/_8sdp"
         android:layout_marginEnd="@dimen/_8sdp"
-        android:layout_marginBottom="@dimen/_6sdp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_place_order"
+        tools:layout_editor_absoluteX="10dp" />
+
+    <Button
+        android:id="@+id/btn_place_order"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/place_order"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_16sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent" />
 
 
