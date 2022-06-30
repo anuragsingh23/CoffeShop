@@ -3,10 +3,11 @@ package com.example.coffeeshop.ui.orderscreen
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.coffeeshop.utils.Toast
-import hilt_aggregated_deps._dagger_hilt_android_internal_lifecycle_DefaultViewModelFactories_ActivityEntryPoint
+import com.google.firebase.database.DatabaseReference
 
 class OrderViewModel : ViewModel() {
+
+    private lateinit var dataRef: DatabaseReference
 
     private val _espresso = MutableLiveData<Int>()
     val espresso : LiveData<Int> = _espresso
@@ -20,15 +21,23 @@ class OrderViewModel : ViewModel() {
     private val _frappe = MutableLiveData<Int>()
     val frappe : LiveData<Int> = _frappe
 
+    private val _bill = MutableLiveData<String>()
+    val bill : LiveData<String> = _bill
+
+
     init {
+        _bill.value = "Items \n"
         _espresso.value = 0
         _cappa.value = 0
-        _latte.value = 0
         _frappe.value = 0
+        _latte.value = 0
     }
+
 
     fun incrementEspresso(){
         _espresso.value = espresso.value?.plus(1)
+       // _bill.value = bill.value + " Espresso ($10) * " + "${_espresso.value}"
+
     }
 
     fun decreaseEspresso(){
@@ -37,6 +46,7 @@ class OrderViewModel : ViewModel() {
         }
         else {
             _espresso.value = espresso.value?.minus(1)
+         //   _bill.value = bill.value + " Espresso ($10) * " + "${_espresso.value}"
         }
     }
     fun incrementCappa(){
@@ -76,15 +86,13 @@ class OrderViewModel : ViewModel() {
         }
     }
 
-    fun orderDetails(){
-        if (_espresso.value!! > 0 ){
 
-        }
-    }
     fun reset(){
         _espresso.value = 0
         _cappa.value = 0
         _frappe.value = 0
         _latte.value = 0
     }
+
+
 }

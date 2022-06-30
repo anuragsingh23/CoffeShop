@@ -14,13 +14,14 @@
     <string name="small">Small</string>
     <string name="medium">Medium</string>
     <string name="large">Large</string>
-    <string name="espresso_10">ESPRESSO : $10</string>
+    <string name="espresso_10">1 : ESPRESSO : $10</string>
     <string name="minus">-</string>
     <string name="initial_value">0</string>
     <string name="increase">+</string>
-    <string name="cappucciano_20">CAPPUCCIANO : $20</string>
-    <string name="latte_15">Latte : $15</string>
-    <string name="frappe_40">Frappe : $40</string>
+    <string name="cappucciano_20">2 : CAPPUCCIANO : $20</string>
+    <string name="latte_15">3 : Latte : $15</string>
+    <string name="frappe_40">4 : Frappe : $40</string>
+    <string name="lbl_add_note">Add Instruction for Items</string>
 
 
 </resources>
