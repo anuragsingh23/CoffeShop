@@ -8,6 +8,7 @@ class CoffeeApp : Application() {
 
     companion object {
         lateinit var instance: Application
+
     }
 
     override fun onCreate() {

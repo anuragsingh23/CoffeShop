@@ -18,10 +18,18 @@
     <string name="minus">-</string>
     <string name="initial_value">0</string>
     <string name="increase">+</string>
-    <string name="cappucciano_20">2 : CAPPUCCIANO : $20</string>
+    <string name="cappucciano_20">2 : CAPPUCCINO : $20</string>
     <string name="latte_15">3 : Latte : $15</string>
     <string name="frappe_40">4 : Frappe : $40</string>
     <string name="lbl_add_note">Add Instruction for Items</string>
+    <string name="_1_espresso_quantity">1. Espresso($10) : Quantity :</string>
+    <string name="_1_cap_quantity">2. Cappuccino($20) : Quantity :</string>
+    <string name="_1_late_quantity">3. Latte($15) : Quantity :</string>
+    <string name="_1_frape_quantity">4 : Frappe($40) : Quantity :</string>
+    <string name="note">Note For Cooking:</string>
+    <string name="date">Date</string>
+    <string name="total">Total :</string>
+    <string name="_0">0</string>
 
 
 </resources>

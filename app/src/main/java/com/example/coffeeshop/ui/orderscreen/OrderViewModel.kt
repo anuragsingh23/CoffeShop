@@ -3,7 +3,10 @@ package com.example.coffeeshop.ui.orderscreen
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.coffeeshop.domain.model.Order
+import com.example.coffeeshop.utils.Toast
 import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 
 class OrderViewModel : ViewModel() {
 
@@ -21,12 +24,8 @@ class OrderViewModel : ViewModel() {
     private val _frappe = MutableLiveData<Int>()
     val frappe : LiveData<Int> = _frappe
 
-    private val _bill = MutableLiveData<String>()
-    val bill : LiveData<String> = _bill
-
-
     init {
-        _bill.value = "Items \n"
+
         _espresso.value = 0
         _cappa.value = 0
         _frappe.value = 0
@@ -36,8 +35,6 @@ class OrderViewModel : ViewModel() {
 
     fun incrementEspresso(){
         _espresso.value = espresso.value?.plus(1)
-       // _bill.value = bill.value + " Espresso ($10) * " + "${_espresso.value}"
-
     }
 
     fun decreaseEspresso(){
@@ -46,7 +43,6 @@ class OrderViewModel : ViewModel() {
         }
         else {
             _espresso.value = espresso.value?.minus(1)
-         //   _bill.value = bill.value + " Espresso ($10) * " + "${_espresso.value}"
         }
     }
     fun incrementCappa(){
@@ -86,13 +82,34 @@ class OrderViewModel : ViewModel() {
         }
     }
 
-
     fun reset(){
         _espresso.value = 0
         _cappa.value = 0
         _frappe.value = 0
         _latte.value = 0
     }
+
+
+    fun addOrder( quantityEspresso : String ,
+                   sizeEspreeso : String ,
+                   quantityCappucciano : String ,
+                   sizeCappucciano : String ,
+                   quantityLatte : String ,
+                   sizeLatte : String ,
+                   quantityFrappe : String ,
+                   sizeFrappe : String ,
+                   note: String? = null,
+                   amount: String,
+                   date : String ) {
+       dataRef = FirebaseDatabase.getInstance().getReference("Users")
+        //add user to database
+        val userID = dataRef.push().key!!
+        val order = Order( quantityEspresso, sizeEspreeso, quantityCappucciano, sizeCappucciano, quantityLatte, sizeLatte, quantityFrappe, sizeFrappe, note, amount, date )
+        dataRef.child("orders").child(userID).setValue(order).addOnSuccessListener {
+            Toast.showToast("Order has been placed !!! ")
+        }.addOnCanceledListener {
+            Toast.showToast("Firebase Exception")
+        }    }
 
 
 }

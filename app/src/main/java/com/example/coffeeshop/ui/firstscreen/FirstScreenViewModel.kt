@@ -18,12 +18,12 @@ class FirstScreenViewModel : ViewModel() {
                 //Check user exist or not
                 override fun onDataChange(snapshot: DataSnapshot) {
                     if (snapshot.value != null) {
-                        Toast.showToast("Already exist")
+                        Toast.showToast("User already exist")
                         return
                     } else {
                         //add user to database
                         val userID = dataRef.push().key!!
-                        val user = User(name, phoneNumber, userID)
+                        val user = User(name , phoneNumber, userID)
                         dataRef.child(userID).setValue(user).addOnCompleteListener {
                             Toast.showToast("user insert complete")
                         }.addOnCanceledListener {
@@ -37,4 +37,5 @@ class FirstScreenViewModel : ViewModel() {
                 }
             })
     }
+
 }

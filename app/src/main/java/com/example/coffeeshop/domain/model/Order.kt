@@ -6,10 +6,19 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "order")
 data class Order(
-    @PrimaryKey(autoGenerate = true) val id: Int? = null ,
-    val items : String ,
-    val size : String ,
-    val note: String?,
-    val amount: Int,
-    val date : String
-)
+    val quantityEspresso: String,
+    val sizeEspreeso: String,
+    val quantityCappucciano: String,
+    val sizeCappucciano: String,
+    val quantityLatte: String,
+    val sizeLatte: String,
+    val quantityFrappe: String,
+    val sizeFrappe: String,
+    val note: String? = null,
+    val amount: String,
+   @PrimaryKey val date: String
+){
+
+}
+
+

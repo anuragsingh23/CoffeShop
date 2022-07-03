@@ -1,5 +1,6 @@
 package com.example.coffeeshop.ui.firstscreen
 
+import android.app.Application
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.LayoutInflater
@@ -72,11 +73,13 @@ class FirstFragment : Fragment(R.layout.fragment_first) {
     }
 
 
+
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
     }
     private fun navigateToOrderScreen(){
-        findNavController().navigate(FirstFragmentDirections.actionFirstFragmentToOrderFragment())
+        val action =FirstFragmentDirections.actionFirstFragmentToOrderFragment()
+        findNavController().navigate(action)
     }
 }
