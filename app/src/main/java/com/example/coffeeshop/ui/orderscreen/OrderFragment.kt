@@ -2,6 +2,7 @@ package com.example.coffeeshop.ui.orderscreen
 
 import android.os.Bundle
 import android.os.Handler
+import android.util.Log
 import android.view.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.*
@@ -14,6 +15,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.coffeeshop.R
 import com.example.coffeeshop.app.CoffeeApp
 import com.example.coffeeshop.databinding.FragmentOrderBinding
+import com.example.coffeeshop.domain.model.Order
 import com.example.coffeeshop.utils.Time
 import com.example.coffeeshop.utils.Toast
 import kotlinx.coroutines.launch
@@ -136,7 +138,6 @@ class OrderFragment : Fragment() {
             radioFrapee = "Size : " + if (R.id.small_4 == checkedId) "Small"
             else if (R.id.medium_4 == checkedId) "Medium" else "Large"
         }
-
 
         binding.btnPlaceOrder.setOnClickListener {
             it.isInvisible = true

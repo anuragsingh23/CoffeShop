@@ -11,7 +11,7 @@ class OrderRepositoryImpl(
     private val dao : OrderDao
 ) : OrderRepository {
 
-    private var databaseReference: DatabaseReference = FirebaseDatabase.getInstance().getReference("Users").child("orders")
+    private lateinit var databaseReference: DatabaseReference
     private var items: ArrayList<Order> = arrayListOf()
 
     override fun getOrder(): Flow<List<Order>> {
@@ -22,7 +22,7 @@ class OrderRepositoryImpl(
             return dao.insertOrder(order)
     }
     init {
-        databaseReference.addValueEventListener(object : ValueEventListener {
+        databaseReference.child("Users").addValueEventListener(object : ValueEventListener {
             override fun onCancelled(p0: DatabaseError) {
                 // do nothing for now
             }
@@ -41,6 +41,8 @@ class OrderRepositoryImpl(
                     Resource.Error("Unknown error occurred", null)
 
                 }
+
+
             }
         })
     }
