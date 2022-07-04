@@ -1,32 +1,36 @@
 package com.example.coffeeshop.data.local
 
-import androidx.room.Room
-import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.SmallTest
 import com.example.coffeeshop.domain.model.Order
 import com.google.common.truth.Truth.assertThat
+import dagger.hilt.android.testing.HiltAndroidRule
+import dagger.hilt.android.testing.HiltAndroidTest
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
 import org.junit.After
 import org.junit.Before
+import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
+import javax.inject.Inject
+import javax.inject.Named
 
 @RunWith(AndroidJUnit4::class)
 @SmallTest
-
+@HiltAndroidTest
 class OrderDaoTest {
-    private lateinit var database: OrderDatabase
+
+    @get:Rule
+    var hiltRule =HiltAndroidRule(this)
+    @Inject
+    @Named("test_db")
+    lateinit var database: OrderDatabase
     private lateinit var dao : OrderDao
 
     @Before
     fun setup(){
-        database = Room.inMemoryDatabaseBuilder(
-            ApplicationProvider.getApplicationContext(),
-            OrderDatabase::class.java
-        ).allowMainThreadQueries()
-            .build()
+        hiltRule.inject()
         dao = database.orderDao
 
     }
