@@ -2,7 +2,7 @@ package com.example.coffeeshop.data.di
 
 import android.app.Application
 import androidx.room.Room
-import com.example.coffeeshop.data.data_source.OrderDatabase
+import com.example.coffeeshop.data.local.OrderDatabase
 import com.example.coffeeshop.data.repository.OrderRepositoryImpl
 import com.example.coffeeshop.domain.repo.OrderRepository
 import dagger.Module

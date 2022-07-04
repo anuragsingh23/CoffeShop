@@ -1,6 +1,6 @@
 package com.example.coffeeshop.data.repository
 
-import com.example.coffeeshop.data.data_source.OrderDao
+import com.example.coffeeshop.data.local.OrderDao
 import com.example.coffeeshop.domain.model.Order
 import com.example.coffeeshop.domain.repo.OrderRepository
 import com.example.coffeeshop.utils.Resource

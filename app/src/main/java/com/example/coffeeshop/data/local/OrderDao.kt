@@ -1,4 +1,4 @@
-package com.example.coffeeshop.data.data_source
+package com.example.coffeeshop.data.local
 
 import androidx.room.Dao
 import androidx.room.Insert
