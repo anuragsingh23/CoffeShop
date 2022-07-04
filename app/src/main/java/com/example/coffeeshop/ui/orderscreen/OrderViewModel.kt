@@ -110,6 +110,4 @@ class OrderViewModel : ViewModel() {
         }.addOnCanceledListener {
             Toast.showToast("Firebase Exception")
         }    }
-
-
 }
