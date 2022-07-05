@@ -3,6 +3,8 @@ package com.example.coffeeshop.data.local
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.SmallTest
 import com.example.coffeeshop.domain.model.Order
+import com.example.coffeeshop.launchFragmentInHiltContainer
+import com.example.coffeeshop.ui.firstscreen.FirstFragment
 import com.google.common.truth.Truth.assertThat
 import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
@@ -38,6 +40,13 @@ class OrderDaoTest {
     @After
     fun tearDown(){
         database.close()
+    }
+
+
+    @Test
+    fun testLaunchFragmentInHiltContainer(){
+        launchFragmentInHiltContainer<FirstFragment> {
+        }
     }
 
     @Test
