@@ -8,6 +8,7 @@ import com.example.coffeeshop.ui.firstscreen.FirstFragment
 import com.google.common.truth.Truth.assertThat
 import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
 import org.junit.After
@@ -43,8 +44,9 @@ class OrderDaoTest {
     }
 
 
+    @OptIn(ExperimentalCoroutinesApi::class)
     @Test
-    fun testLaunchFragmentInHiltContainer(){
+    fun testLaunchFragmentInHiltContainer()  {
         launchFragmentInHiltContainer<FirstFragment> {
         }
     }
