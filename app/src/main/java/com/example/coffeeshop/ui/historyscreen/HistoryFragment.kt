@@ -11,6 +11,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.coffeeshop.databinding.FragmentHistoryBinding
+import com.example.coffeeshop.domain.model.Data
 import com.example.coffeeshop.ui.MainActivity
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -31,9 +32,6 @@ class HistoryFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentHistoryBinding.inflate(layoutInflater,container,false)
-
-
-
         (activity as AppCompatActivity).supportActionBar?.title = "History"
 
         val activity = activity as? MainActivity
@@ -45,21 +43,13 @@ class HistoryFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val historyAdapter = HistoryAdapter()
+        val adapter = HistoryAdapter(Data.list)
+        binding.recyclerView.layoutManager = LinearLayoutManager(requireContext() , LinearLayoutManager.VERTICAL,false)
+        binding.recyclerView.adapter = adapter
 
-        binding.apply {
-            recyclerView.apply {
-                adapter = historyAdapter
-                layoutManager = LinearLayoutManager(requireContext())
-                setHasFixedSize(true)
-
-            }
-        }
-
-        viewModel.orders.observe(viewLifecycleOwner, Observer { result ->
-            historyAdapter.submitList(result)
-        })
     }
+
+
     @Deprecated("Avoid for now")
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val activity = activity as? MainActivity

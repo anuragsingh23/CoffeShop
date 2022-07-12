@@ -7,16 +7,16 @@ import androidx.room.PrimaryKey
 @Keep
 @Entity(tableName = "order")
 data class Order(
-    val quantityEspresso: String? = null,
-    val sizeEspreeso: String? = null,
-    val quantityCappucciano: String? = null,
-    val sizeCappucciano: String? = null,
-    val quantityLatte: String? = null,
-    val sizeLatte: String? = null,
-    val quantityFrappe: String? = null,
-    val sizeFrappe: String? = null,
+    val quantityEspresso: String?,
+    val sizeEspreeso: String?,
+    val quantityCappucciano: String?,
+    val sizeCappucciano: String?,
+    val quantityLatte: String?,
+    val sizeLatte: String?,
+    val quantityFrappe: String?,
+    val sizeFrappe: String?,
     val note: String? = null,
-    val amount: String? = null,
+    val amount: String,
    @PrimaryKey val date: String
 ){
 

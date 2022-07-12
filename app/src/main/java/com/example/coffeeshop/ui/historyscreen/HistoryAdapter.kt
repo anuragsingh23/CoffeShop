@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.coffeeshop.databinding.OrderListBinding
 import com.example.coffeeshop.domain.model.Order
 
-class HistoryAdapter : ListAdapter<Order , HistoryAdapter.HistoryViewHolder>(DiffCallback()) {
+class HistoryAdapter (val list : List<Order>) : RecyclerView.Adapter<HistoryAdapter.HistoryViewHolder>() {
 
     inner class HistoryViewHolder(private val binding : OrderListBinding ) :
             RecyclerView.ViewHolder(binding.root){
@@ -31,21 +31,18 @@ class HistoryAdapter : ListAdapter<Order , HistoryAdapter.HistoryViewHolder>(Dif
             }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HistoryViewHolder {
-                return  HistoryViewHolder(OrderListBinding.
-                inflate(LayoutInflater.from(parent.context),parent,false))
-    }
-
-
-
-    class DiffCallback : DiffUtil.ItemCallback<Order>(){
-        override fun areItemsTheSame(oldItem: Order, newItem: Order) =oldItem.date == newItem.date
-
-        override fun areContentsTheSame(oldItem: Order, newItem: Order)= oldItem == newItem
-
+        return HistoryViewHolder(OrderListBinding.
+        inflate(LayoutInflater.from(parent.context),parent,false))
     }
 
     override fun onBindViewHolder(holder: HistoryViewHolder, position: Int) {
-        val currentItem = getItem(position)
-        holder.bindItem(currentItem)
+       val task = list[position]
+        holder.bindItem(task)
     }
+
+    override fun getItemCount(): Int {
+        return list.size
+    }
+
+
 }

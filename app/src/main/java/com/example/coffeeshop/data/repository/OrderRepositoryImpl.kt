@@ -21,29 +21,29 @@ class OrderRepositoryImpl(
     override suspend fun insertOrder(order: Order) {
             return dao.insertOrder(order)
     }
-    init {
-        databaseReference.child("Users").addValueEventListener(object : ValueEventListener {
-            override fun onCancelled(p0: DatabaseError) {
-                // do nothing for now
-            }
-
-            override fun onDataChange(p0: DataSnapshot) {
-
-                items = ArrayList()
-                if (p0.exists()) {
-                    for (i in p0.children) {
-                        val itm = i.getValue(Order::class.java)
-                        items.add(itm!!)
-                    }
-                    Resource.Success("Data fetched successfully")
-                }
-                else{
-                    Resource.Error("Unknown error occurred", null)
-
-                }
-
-
-            }
-        })
-    }
+//    init {
+//        databaseReference.child("Users").addValueEventListener(object : ValueEventListener {
+//            override fun onCancelled(p0: DatabaseError) {
+//                // do nothing for now
+//            }
+//
+//            override fun onDataChange(p0: DataSnapshot) {
+//
+//                items = ArrayList()
+//                if (p0.exists()) {
+//                    for (i in p0.children) {
+//                        val itm = i.getValue(Order::class.java)
+//                        items.add(itm!!)
+//                    }
+//                    Resource.Success("Data fetched successfully")
+//                }
+//                else{
+//                    Resource.Error("Unknown error occurred", null)
+//
+//                }
+//
+//
+//            }
+//        })
+//    }
 }
