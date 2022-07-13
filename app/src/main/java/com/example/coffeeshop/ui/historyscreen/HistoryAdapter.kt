@@ -2,18 +2,28 @@ package com.example.coffeeshop.ui.historyscreen
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.example.coffeeshop.R
 import com.example.coffeeshop.databinding.OrderListBinding
 import com.example.coffeeshop.domain.model.Order
 
-class HistoryAdapter (val list : List<Order>) : RecyclerView.Adapter<HistoryAdapter.HistoryViewHolder>() {
+class HistoryAdapter (private val list : List<Order>) : RecyclerView.Adapter<HistoryAdapter.HistoryViewHolder>() {
 
     inner class HistoryViewHolder(private val binding : OrderListBinding ) :
             RecyclerView.ViewHolder(binding.root){
                 fun bindItem(order: Order){
                     binding.apply {
+                        one.text = "1. Espresso($10) : Quantity :"
+                        oneSize.text = "Size :"
+                        two.text ="2. Cappuccino($20): Quantity:"
+                        twoSize.text="Size :"
+                        three.text = "3. Latte($15) : Quantity :"
+                        threeSize.text="Size :"
+                        four.text="4 : Frappe($40) : Quantity :"
+                        fourSize.text ="Size :"
+                        noteTitle.text = "Note For Cooking:"
+                        dateTitle.text = "Date :"
+                        totalTittle.text = "Total :"
                         etEsQ.text = order.quantityEspresso
                         etEsSi.text = order.sizeEspreeso
                         etCaQ.text = order.quantityCappucciano

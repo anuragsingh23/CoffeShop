@@ -24,11 +24,12 @@
                 android:orientation="horizontal"
                 tools:ignore="UseCompoundDrawables">
                 <TextView
+                    android:id="@+id/one"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@android:color/black"
                     android:textSize="@dimen/_12sdp"
-                    android:ems="12"
+                    android:ems="13"
                     android:textStyle="bold"
                     tools:text="@string/_1_espresso_quantity" />
                 <TextView
@@ -43,12 +44,13 @@
                     android:ems="1"
                     android:textStyle="bold" />
                 <TextView
+                    android:id="@+id/one_size"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@android:color/black"
                     android:layout_marginStart="@dimen/_5sdp"
                     android:textSize="@dimen/_12sdp"
-                    android:ems="2"
+                    android:ems="3"
                     android:textStyle="bold"
                     tools:text="size" />
                 <TextView
@@ -70,11 +72,12 @@
                 android:orientation="horizontal"
                 tools:ignore="UseCompoundDrawables">
                 <TextView
+                    android:id="@+id/two"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@android:color/black"
                     android:textSize="@dimen/_12sdp"
-                    android:ems="12"
+                    android:ems="13"
                     android:textStyle="bold"
                     tools:text="@string/_1_cap_quantity" />
                 <TextView
@@ -89,12 +92,13 @@
                     android:textStyle="bold"
                     tools:text="@string/_0" />
                 <TextView
+                    android:id="@+id/two_size"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@android:color/black"
                     android:layout_marginStart="@dimen/_5sdp"
                     android:textSize="@dimen/_12sdp"
-                    android:ems="2"
+                    android:ems="3"
                     android:textStyle="bold"
                     tools:text="size" />
                 <TextView
@@ -115,11 +119,12 @@
                 android:orientation="horizontal"
                 tools:ignore="UseCompoundDrawables">
                 <TextView
+                    android:id="@+id/three"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@android:color/black"
                     android:textSize="@dimen/_12sdp"
-                    android:ems="12"
+                    android:ems="13"
                     android:textStyle="bold"
                     tools:text="@string/_1_late_quantity" />
                 <TextView
@@ -134,12 +139,13 @@
                     android:textStyle="bold"
                     tools:text="@string/_0" />
                 <TextView
+                    android:id="@+id/three_size"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@android:color/black"
                     android:layout_marginStart="@dimen/_5sdp"
                     android:textSize="@dimen/_12sdp"
-                    android:ems="2"
+                    android:ems="3"
                     android:textStyle="bold"
                     tools:text="size" />
                 <TextView
@@ -160,11 +166,12 @@
                 android:orientation="horizontal"
                 tools:ignore="UseCompoundDrawables">
                 <TextView
+                    android:id="@+id/four"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@android:color/black"
                     android:textSize="@dimen/_12sdp"
-                    android:ems="12"
+                    android:ems="13"
                     android:textStyle="bold"
                     tools:text="@string/_1_frape_quantity" />
                 <TextView
@@ -179,12 +186,13 @@
                     android:textStyle="bold"
                     tools:text="@string/_0" />
                 <TextView
+                    android:id="@+id/four_size"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@android:color/black"
                     android:layout_marginStart="@dimen/_5sdp"
                     android:textSize="@dimen/_12sdp"
-                    android:ems="2"
+                    android:ems="3"
                     android:textStyle="bold"
                     tools:text="size" />
                 <TextView
@@ -205,6 +213,7 @@
                 android:orientation="horizontal"
                 tools:ignore="UseCompoundDrawables">
                 <TextView
+                    android:id="@+id/note_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@android:color/black"
@@ -237,11 +246,12 @@
                 android:orientation="horizontal"
                 tools:ignore="UseCompoundDrawables">
                 <TextView
+                    android:id="@+id/date_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@android:color/black"
                     android:textSize="@dimen/_12sdp"
-                    android:ems="2"
+                    android:ems="3"
                     android:textStyle="bold"
                     tools:text="@string/date" />
                 <TextView
@@ -256,12 +266,13 @@
                     android:textStyle="bold"
                     tools:text="0" />
                 <TextView
+                    android:id="@+id/total_tittle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@android:color/black"
                     android:layout_marginStart="@dimen/_5sdp"
                     android:textSize="@dimen/_12sdp"
-                    android:ems="3"
+                    android:ems="4"
                     android:textStyle="bold"
                     tools:text="@string/total" />
                 <TextView

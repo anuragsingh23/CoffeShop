@@ -101,11 +101,10 @@ class OrderViewModel : ViewModel() {
                    note: String? = null,
                    amount: String,
                    date : String ) {
-       dataRef = FirebaseDatabase.getInstance().getReference()
+       dataRef = FirebaseDatabase.getInstance().reference
         //add user to database
-        val userID = dataRef.push().key!!
         val order = Order( quantityEspresso, sizeEspreeso, quantityCappucciano, sizeCappucciano, quantityLatte, sizeLatte, quantityFrappe, sizeFrappe, note, amount, date )
-        dataRef.child("Orders").child(userID).setValue(order).addOnSuccessListener {
+        dataRef.child("Orders").push().setValue(order).addOnSuccessListener {
             Toast.showToast("Order has been placed !!! ")
         }.addOnCanceledListener {
             Toast.showToast("Firebase Exception")
